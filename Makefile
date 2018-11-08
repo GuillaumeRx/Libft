@@ -6,7 +6,7 @@
 #    By: guroux <guroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:00:56 by guroux            #+#    #+#              #
-#    Updated: 2018/11/08 19:27:25 by guroux           ###   ########.fr        #
+#    Updated: 2018/11/08 21:06:36 by guroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC  =  ./ft_memalloc.c \
 
 HEADER = ./libft.h
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME):
 	gcc -c -Wall -Wextra -Werror $(SRC) $(HEADER)
@@ -36,7 +36,6 @@ $(NAME):
 
 clean:
 	/bin/rm -f *.o
-	/bin/rm -f *.gch
 
 fclean: clean
 	/bin/rm -f $(NAME)
