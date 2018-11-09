@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:01:51 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/08 21:00:05 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/09 13:04:51 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,9 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putnbr(int n);
+void	ft_putchar(char c);
+void	ft_putstr(const char *s);
+void	ft_putendl(const char *s);
 
 #endif

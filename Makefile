@@ -6,7 +6,7 @@
 #    By: guroux <guroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:00:56 by guroux            #+#    #+#              #
-#    Updated: 2018/11/08 21:06:36 by guroux           ###   ########.fr        #
+#    Updated: 2018/11/09 13:05:13 by guroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,11 @@ SRC  =  ./ft_memalloc.c \
 		./ft_isascii.c	\
 		./ft_isprint.c	\
 		./ft_strcmp.c	\
-		./ft_strncmp.c
+		./ft_strncmp.c	\
+		./ft_putnbr.c	\
+		./ft_putchar.c	\
+		./ft_putstr.c	\
+		./ft_putendl.c	\
 
 HEADER = ./libft.h
 
