@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 12:49:05 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/09 13:53:13 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/09 14:06:26 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/09 14:57:11 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_strnew(size_t size)
 {
-	unsigned int f_num;
+	size_t	i;
+	char	*str;
 
-	if (n < 0)
+	i = 0;
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	while (i <= size + 1)
 	{
-		ft_putchar('-');
-		n *= -1;
+		str[i] = '\0';
+		i++;
 	}
-	f_num = n;
-	if (f_num >= 10)
-	{
-		ft_putnbr(f_num / 10);
-		ft_putnbr(f_num % 10);
-	}
-	else
-	{
-		ft_putchar(f_num + '0');
-	}
+	return (str);
 }

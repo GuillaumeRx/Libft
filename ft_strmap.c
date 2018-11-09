@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 12:49:05 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/09 13:53:13 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/09 16:10:18 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/09 17:24:32 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	unsigned int f_num;
+	int		i;
+	char	*str;
 
-	if (n < 0)
+	i = 0;
+	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen((char *)s) + 1))))
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		ft_putchar('-');
-		n *= -1;
+		str[i] = f(s[i]);
+		i++;
 	}
-	f_num = n;
-	if (f_num >= 10)
-	{
-		ft_putnbr(f_num / 10);
-		ft_putnbr(f_num % 10);
-	}
-	else
-	{
-		ft_putchar(f_num + '0');
-	}
+	str[i] = '\0';
+	return (str);
 }
