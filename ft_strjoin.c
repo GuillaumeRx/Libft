@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 18:18:42 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/12 16:34:20 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/12 16:58:29 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/12 17:13:16 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(const char *s1, const char *s2, size_t n)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	while (n--)
+	char	*str;
+	int		i;
+	int		j;
+
+	i = ft_strlen((char *)s1);
+	j = ft_strlen((char *)s2);
+	if (!(str = (char *)malloc(sizeof(char) * (i + j) + 1)))
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[j] != '\0')
 	{
-		if (s1[n] != s2[n])
-			return (0);
+		str[i] = s1[j];
+		i++;
+		j++;
 	}
-	return (1);
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }

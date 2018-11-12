@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 18:18:42 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/12 16:34:20 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/12 16:38:38 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/12 16:57:23 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(const char *s1, const char *s2, size_t n)
+char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
-	while (n--)
+	size_t	i;
+	char	*str;
+
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	i = 0;
+	while (i < len && s[start] != '\0')
 	{
-		if (s1[n] != s2[n])
-			return (0);
+		str[i] = s[start];
+		i++;
+		start++;
 	}
-	return (1);
+	str[i] = '\0';
+	return (str);
 }

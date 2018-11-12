@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:01:51 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/09 18:23:12 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/12 20:26:28 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int		ft_strequ(const char *s1, const char *s2);
 int		ft_strnequ(const char *s1, const char *s2, size_t n);
+char	*ft_strsub(const char *s, unsigned int start, size_t len);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strtrim(const char *s);
+char	**ft_strsplit(const char *s, char c);
 
 #endif

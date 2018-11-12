@@ -6,7 +6,7 @@
 #    By: guroux <guroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:00:56 by guroux            #+#    #+#              #
-#    Updated: 2018/11/09 18:23:28 by guroux           ###   ########.fr        #
+#    Updated: 2018/11/12 20:26:57 by guroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,10 @@ SRC  =  ./ft_memalloc.c \
 		./ft_strmap.c	\
 		./ft_strmapi.c	\
 		./ft_strequ.c	\
-		./ft_strnequ.c
+		./ft_strnequ.c	\
+		./ft_strsub.c	\
+		./ft_strjoin.c	\
+		./ft_strsplit.c
 
 HEADER = ./libft.h
 
