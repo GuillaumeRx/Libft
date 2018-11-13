@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 20:19:55 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/12 20:33:59 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/13 15:49:56 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/13 17:25:38 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	alloc_words(const char *st, char **tmp, char c)
 		}
 	}
 	if (!(tmp[j] = (char *)malloc(sizeof(char) * 1)))
-		return;
+		return ;
 	tmp[j] = 0;
 }
 
@@ -77,7 +77,7 @@ char	**ft_strsplit(const char *s, char c)
 	{
 		if (s[i] != c)
 		{
-			if (s[i - 1] == c)
+			if (s[i - 1] == c || i == 0)
 				words++;
 		}
 		i++;
