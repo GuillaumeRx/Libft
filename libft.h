@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:01:51 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/13 21:19:50 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/14 18:30:22 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ void	ft_putstr_fd(const char *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_memset(void *b, int c, size_t len);
-
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
 #endif

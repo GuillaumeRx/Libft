@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 21:26:53 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/14 18:05:18 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/14 16:53:56 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/14 18:13:35 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*pdst;
 	const char	*psrc;
 
 	pdst = (char *)dst;
 	psrc = (const char *)src;
-	while (n--)
-		*pdst++ = *psrc++;
+	while (len--)
+	{
+		if (pdst < psrc)
+			*pdst++ = *psrc++;
+		else
+			pdst[len] = psrc[len];
+	}
 	return (dst);
 }
