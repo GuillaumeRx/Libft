@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:31:10 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/15 16:32:45 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/15 11:34:08 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/15 12:34:43 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *s1)
 {
-	size_t i;
+	int		i;
+	char	*s2;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (!(s2 = ft_strnew(ft_strlen((char *)s1))))
+		return (NULL);
+	while (s1[i] != '\0')
 	{
+		s2[i] = s1[i];
 		i++;
 	}
-	return (i);
+	s2[i] = '\0';
+	return (s2);
 }
