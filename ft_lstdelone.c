@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 18:11:37 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/16 18:56:41 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/16 21:22:20 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/16 21:38:47 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(const char *s1, const char *s2)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	int	i;
-
-	i = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (s1[i] != '\0' || s2[i] != '\0')
+	if (*alst && del)
 	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = NULL;
 	}
-	return (1);
 }

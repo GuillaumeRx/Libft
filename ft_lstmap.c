@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 18:11:37 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/16 18:56:41 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/16 22:36:55 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/16 22:44:17 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(const char *s1, const char *s2)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int	i;
+	t_list *start;
+	t_list *new;
+	t_list *actual;
 
-	i = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (s1[i] != '\0' || s2[i] != '\0')
+	if (!lst || !f)
+		return (NULL);
+	start = NULL;
+	while (lst)
 	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
+		new = f(lst);
+		if (start)
+		{
+			actual->next = new;
+			actual = actual->next;
+		}
+		else
+		{
+			start = new;
+			actual = start;
+		}
+		lst = lst->next;
 	}
-	return (1);
+	return (start);
 }

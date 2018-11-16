@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 18:28:32 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/13 20:45:41 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/16 19:21:27 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strtrim(const char *s)
 	unsigned int	start;
 	unsigned int	end;
 
+	if (s == NULL)
+		return (NULL);
 	end = ft_strlen((char *)s) - 1;
 	start = 0;
 	if (s[0] == '\0')

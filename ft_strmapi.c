@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 18:06:36 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/09 18:08:57 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/16 18:55:07 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen((char *)s) + 1))))
 		return (NULL);
 	while (s[i] != '\0')

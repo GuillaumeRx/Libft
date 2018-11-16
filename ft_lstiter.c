@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 18:11:37 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/16 18:56:41 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/16 22:29:05 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/16 22:35:22 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(const char *s1, const char *s2)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int	i;
-
-	i = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (s1[i] != '\0' || s2[i] != '\0')
+	if (lst && f)
 	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
+		ft_lstiter(lst->next, f);
+		f(lst);
 	}
-	return (1);
 }

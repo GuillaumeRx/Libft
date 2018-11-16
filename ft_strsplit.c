@@ -6,20 +6,20 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 15:49:56 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/13 17:25:38 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/16 19:33:12 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	init(int *i, int *j, int *k)
+static void		init(int *i, int *j, int *k)
 {
 	*i = 0;
 	*j = 0;
 	*k = 0;
 }
 
-char	*cpy_word(int i, int k, const char *str)
+static char		*cpy_word(int i, int k, const char *str)
 {
 	int		l;
 	char	*buff;
@@ -37,7 +37,7 @@ char	*cpy_word(int i, int k, const char *str)
 	return (buff);
 }
 
-void	alloc_words(const char *st, char **tmp, char c)
+static void		alloc_words(const char *st, char **tmp, char c)
 {
 	int i;
 	int j;
@@ -65,7 +65,7 @@ void	alloc_words(const char *st, char **tmp, char c)
 	tmp[j] = 0;
 }
 
-char	**ft_strsplit(const char *s, char c)
+char			**ft_strsplit(const char *s, char c)
 {
 	int		i;
 	int		words;
@@ -73,6 +73,8 @@ char	**ft_strsplit(const char *s, char c)
 
 	i = 0;
 	words = 0;
+	if (s == NULL)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)

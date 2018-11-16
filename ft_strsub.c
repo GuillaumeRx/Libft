@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 16:38:38 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/12 16:57:23 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/16 18:57:45 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	i = 0;
