@@ -73,16 +73,17 @@ SRC  =  ./ft_memalloc.c 	\
 		./ft_lstmap.c
 
 HEADER = ./libft.h
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
 	gcc -c -Wall -Wextra -Werror $(SRC) $(HEADER)
-	ar rc $(NAME) *.o
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)

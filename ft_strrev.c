@@ -18,6 +18,8 @@ char	*ft_strrev(char *s)
 	int		j;
 	char	c;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s) - 1;
 	while (i++ < j++)

@@ -30,10 +30,10 @@ int		ft_atoi(const char *str)
 			n = -1;
 		i++;
 	}
-	while (ft_isdigit((unsigned char)str[i]))
+	while (ft_isdigit((int)str[i]))
 	{
 		tmp = tmp * 10 + (str[i] - '0');
 		i++;
 	}
-	return (tmp * n);
+	return ((int)(tmp * n));
 }
