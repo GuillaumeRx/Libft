@@ -6,14 +6,13 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 16:23:12 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/14 16:43:52 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:48:56 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src,
-int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	int						i;
 	unsigned char			*pdst;

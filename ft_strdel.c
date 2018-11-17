@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:55:41 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/16 18:53:02 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:53:19 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strdel(char **as)
 {
-	if (as == NULL || *as)
+	if (as == NULL || *as == NULL)
 		return ;
 	free(*as);
 	*as = NULL;
