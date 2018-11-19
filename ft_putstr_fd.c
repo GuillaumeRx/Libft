@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 20:54:34 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/13 20:56:42 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/19 17:01:56 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void	ft_putstr_fd(const char *s, int fd)
 {
 	int i;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (s && fd)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		i = 0;
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	}
 }
