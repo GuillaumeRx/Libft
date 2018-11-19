@@ -6,7 +6,7 @@
 #    By: guroux <guroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:00:56 by guroux            #+#    #+#              #
-#    Updated: 2018/11/16 22:44:50 by guroux           ###   ########.fr        #
+#    Updated: 2018/11/19 20:05:51 by guroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,9 @@ SRC  =  ./ft_memalloc.c 	\
 		./ft_lstdel.c		\
 		./ft_lstadd.c		\
 		./ft_lstiter.c		\
-		./ft_lstmap.c
+		./ft_lstmap.c		\
+		./ft_sort.c			\
+		./ft_count.c
 
 HEADER = ./libft.h
 OBJ = $(SRC:.c=.o)

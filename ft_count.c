@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_count.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 22:33:57 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/19 20:06:14 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/19 20:04:09 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/19 20:06:01 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char			*ft_itoa(int n)
+int		ft_count(int n)
 {
-	int		nb;
-	int		i;
-	char	*s;
+	int i;
 
-	nb = n;
-	i = ft_count(n);
-	if (!(s = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	s[i] = '\0';
-	i--;
-	while (i > -1)
-	{
-		if (nb < 0)
-			s[i] = (-(nb % 10) + '0');
-		else
-			s[i] = (nb % 10 + '0');
-		nb /= 10;
-		i--;
-	}
+	i = 1;
 	if (n < 0)
-		s[0] = '-';
-	return (s);
+	{
+		i++;
+		n *= -1;
+	}
+	while ((n /= 10) != 0)
+		i++;
+	return (i);
 }
