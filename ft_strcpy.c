@@ -6,11 +6,9 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 11:43:43 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/15 11:55:44 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/19 17:12:45 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

@@ -6,11 +6,9 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 19:11:45 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/08 19:25:29 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/19 17:12:35 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
