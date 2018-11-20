@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_sort_table.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 22:36:55 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/20 12:08:43 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/19 19:10:07 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/20 11:52:36 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+void	ft_sort_table(int *tab, size_t size)
 {
-	t_list *start;
-	t_list *new;
-	t_list *actual;
+	size_t		i;
+	int			tmp;
 
-	if (!lst || !f)
-		return (NULL);
-	start = NULL;
-	while (lst)
+	if (tab)
 	{
-		new = f(lst);
-		if (start)
+		i = 0;
+		while (i < size - 1)
 		{
-			actual->next = new;
-			actual = actual->next;
+			if (tab[i] > tab[i + 1])
+			{
+				tmp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = tmp;
+				i = 0;
+			}
+			else
+			{
+				i++;
+			}
 		}
-		else
-		{
-			start = new;
-			actual = start;
-		}
-		lst = lst->next;
 	}
-	return (start);
 }

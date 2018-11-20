@@ -6,7 +6,7 @@
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:01:51 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/19 20:12:00 by guroux           ###   ########.fr       */
+/*   Updated: 2018/11/20 12:24:29 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void			ft_sort(int *tab, size_t size);
+void			ft_sort_table(int *tab, size_t size);
 int				ft_count(int n);
+int				ft_abs(int n);
+char			**ft_dtaballoc(int size);
 
 #endif

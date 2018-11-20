@@ -1,40 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 22:36:55 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/20 12:08:43 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/20 11:55:01 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/20 11:56:07 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int		ft_abs(int n)
 {
-	t_list *start;
-	t_list *new;
-	t_list *actual;
-
-	if (!lst || !f)
-		return (NULL);
-	start = NULL;
-	while (lst)
-	{
-		new = f(lst);
-		if (start)
-		{
-			actual->next = new;
-			actual = actual->next;
-		}
-		else
-		{
-			start = new;
-			actual = start;
-		}
-		lst = lst->next;
-	}
-	return (start);
+	return (n > 0 ? n : n * -1);
 }

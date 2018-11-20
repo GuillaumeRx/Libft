@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_dtaballoc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guroux <guroux@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 22:36:55 by guroux            #+#    #+#             */
-/*   Updated: 2018/11/20 12:08:43 by guroux           ###   ########.fr       */
+/*   Created: 2018/11/20 12:14:12 by guroux            #+#    #+#             */
+/*   Updated: 2018/11/20 12:25:02 by guroux           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+char	**ft_dtaballoc(int size)
 {
-	t_list *start;
-	t_list *new;
-	t_list *actual;
+	char	**tab;
+	int		i;
 
-	if (!lst || !f)
+	i = 0;
+	if (!(tab = (char **)malloc(sizeof(char *) * size)))
 		return (NULL);
-	start = NULL;
-	while (lst)
-	{
-		new = f(lst);
-		if (start)
-		{
-			actual->next = new;
-			actual = actual->next;
-		}
-		else
-		{
-			start = new;
-			actual = start;
-		}
-		lst = lst->next;
-	}
-	return (start);
+	tab[size - 1] = 0;
+	return (tab);
 }
