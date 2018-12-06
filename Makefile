@@ -6,7 +6,7 @@
 #    By: guroux <guroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:00:56 by guroux            #+#    #+#              #
-#    Updated: 2018/12/05 21:30:30 by guroux           ###   ########.fr        #
+#    Updated: 2018/12/06 21:06:34 by guroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,7 +112,7 @@ count:
 	@printf "$(GREEN)"
 	@git config remote.origin.url
 	@echo $(SRC) | wc -w | xargs printf "$(YELLOW)\n- Makefile .c \t==== \t%d\n"
-	@cat $(HEADERS)/libft.h | grep "ft_" | wc -l | xargs printf "$(YELLOW)- Libft.h .c \t==== \t%d\n"
+	@cat $(HEADERS) | grep "ft_" | wc -l | xargs printf "$(YELLOW)- Libft.h .c \t==== \t%d\n"
 	@find -E . -type f -regex "./.?.+\.c" | wc -w | xargs printf "$(YELLOW)- File(s) .c \t==== \t%d\n"
 	@find -E . -type f -regex "./.?.+\.o" | wc -w | xargs printf "$(YELLOW)- File(s) .o \t==== \t%d\n"
 	@find -E . -type f -regex "./.?.+\.a" | wc -w | xargs printf "$(YELLOW)- Libft.a .a \t==== \t%d\n"
