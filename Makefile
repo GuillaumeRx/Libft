@@ -6,7 +6,7 @@
 #    By: guroux <guroux@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:00:56 by guroux            #+#    #+#              #
-#    Updated: 2018/11/20 12:24:04 by guroux           ###   ########.fr        #
+#    Updated: 2018/12/05 21:30:30 by guroux           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,20 +76,45 @@ SRC  =  ./ft_memalloc.c 	\
 		./ft_abs.c			\
 		./ft_dtaballoc.c
 
-HEADER = ./libft.h
-OBJ = $(SRC:.c=.o)
+OBJECT = $(SRC:.c=.o)
+
+HEADERS = ./libft.h
+
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
+
+GREEN = \033[0;32m
+WHITE = \033[1;37m
+BLUE = \033[1;34m
+RED = \033[0;31m
+YELLOW = \033[1;33m
+
+OKGREEN = $(YELLOW)\t===== $(GREEN)[OK]$(WHITE)
+KORED = $(YELLOW)\t===== $(RED)[error]$(WHITE)
+
+$(NAME): $(SRC) $(HEADERS) Makefile
+	@$(CC) -c $(FLAGS) -I$(HEADERS) $(SRC) && echo "- $(BLUE)Compilation$(OKGREEN)" || (echo "- $(BLUE)Compile$(KORED)" && false)
+	@ar rc $(NAME) $(OBJECT) && echo "- $(BLUE)Create lib$(OKGREEN)" || (echo "- $(BLUE)Create lib$(KORED)" && false)
+	@ranlib $(NAME) && echo "- $(BLUE)Index lib$(OKGREEN)" || (echo "- $(BLUE)Index lib$(KORED)" && false)
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC) $(HEADER)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
-
 clean:
-	/bin/rm -f $(OBJ)
+	@rm -rf $(OBJECT)
+	@echo "- $(BLUE)Delete object$(OKGREEN)"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@rm -rf $(NAME)
+	@echo "- $(BLUE)Delete lib$(OKGREEN)"
+
+count:
+	@printf "$(GREEN)"
+	@git config remote.origin.url
+	@echo $(SRC) | wc -w | xargs printf "$(YELLOW)\n- Makefile .c \t==== \t%d\n"
+	@cat $(HEADERS)/libft.h | grep "ft_" | wc -l | xargs printf "$(YELLOW)- Libft.h .c \t==== \t%d\n"
+	@find -E . -type f -regex "./.?.+\.c" | wc -w | xargs printf "$(YELLOW)- File(s) .c \t==== \t%d\n"
+	@find -E . -type f -regex "./.?.+\.o" | wc -w | xargs printf "$(YELLOW)- File(s) .o \t==== \t%d\n"
+	@find -E . -type f -regex "./.?.+\.a" | wc -w | xargs printf "$(YELLOW)- Libft.a .a \t==== \t%d\n"
 
 re: fclean all
