@@ -28,6 +28,6 @@ ___
 
 | Name          | File          | Description  |
 | ------------- |:-------------:| ------------:|
-| ft_memset     | `ft_memset.c` | `man memse`  |
-| col 2 is      | centered      |   $12        |
-| zebra stripes | are neat      |    $1        |
+| ft_memset     | `ft_memset.c` | `man memset` |
+| ft_bzero      | `ft_bzero`    | `man bzero`  |
+| ft_memcpy     | `ft_memcpy`   | `man memcpy` |
