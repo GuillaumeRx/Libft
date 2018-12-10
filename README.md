@@ -1,6 +1,6 @@
 # Libft
 
-Personnal C library with usefull functions.
+> Personnal C library with usefull functions.
 
 ## Compiling
 
