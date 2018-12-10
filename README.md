@@ -23,3 +23,11 @@ ___
 ___
 
 `count` : Count the number of `.c` files and the number of functions added to libft.h / Makefile. It make sure you don't have bastard files that are not necessary
+
+## Function list
+
+| Name          | File          | Description  |
+| ------------- |:-------------:| ------------:|
+| ft_memset     | `ft_memset.c` | `man memse`  |
+| col 2 is      | centered      |   $12        |
+| zebra stripes | are neat      |    $1        |
