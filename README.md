@@ -26,6 +26,10 @@ ___
 
 ## Function list
 
+### Libc functions
+
+> Libc functions recoded for better understanding and flexability
+
 | Name          | File          | Prototype                                                                              | Description       |
 | ------------- |:-------------:|----------------------------------------------------------------------------------------|-------------------|
 | ft_memset     | `ft_memset.c` | `void		*ft_memset (void *s, int c, size_t n);`                                      | `man memset`      |
@@ -48,3 +52,23 @@ ___
 | ft_strnstr    | `ft_strnstr.c`| `char		*ft_strnstr(const char *haystack, const char *needle, size_t len);`          | `man strnstr`     |
 | ft_strcmp     | `ft_strcmp.c` | `int		ft_strcmp(const char *s1, const char *s2);`                                  | `man strcmp`      |
 | ft_strncmp    | `ft_strncmp`  | `int		ft_strncmp(const char *s1, const char *s2, size_t n);`                       | `man strncmp`     |
+
+### Additional functions
+
+> Some usefull functions coded to increase workflow. Some are used in Libc's functions I've made.
+
+
+### Bonus functions
+
+> Functions made to handle chained-lists. Works only with the libft's generic chained-list.
+
+- **generic list structure**
+
+```c
+typedef struct	s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
+```
