@@ -1,7 +1,5 @@
 # Libft
 
-## Description
-
 Personnal C library with usefull functions.
 
 ## Compiling
