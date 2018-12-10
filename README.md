@@ -64,9 +64,9 @@ ___
 
 > Functions made to handle chained-lists. Works only with the libft's generic chained-list.
 
-- **generic list structure**
-
 ```c
+// Libft list structure
+
 typedef struct	s_list
 {
 	void			*content;
