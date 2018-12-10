@@ -27,7 +27,7 @@ ___
 ## Function list
 
 | Name          | File          | Prototype                                                             | Description   |
-| ------------- |:-------------:|:---------------------------------------------------------------------:|---------------|
+| ------------- |:-------------:|-----------------------------------------------------------------------|---------------|
 | ft_memset     | `ft_memset.c` | `void		*ft_memset (void *s, int c, size_t n);`                     | `man memset`  |
 | ft_bzero      | `ft_bzero.c`  | `void		ft_bzero(void *s, size_t n);`                               | `man bzero`   |
 | ft_memcpy     | `ft_memcpy.c` | `void		*ft_memcpy(void *dest, const void *src, size_t n);`         | `man memcpy`  |
