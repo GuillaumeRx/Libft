@@ -6,8 +6,6 @@
 
 **Use the command `make` to ran library compilation. You can also pair `make` with one of above rules to do various things**
 
-___
-
 `all` : Compile the library and create `libft.a`
 
 ___
