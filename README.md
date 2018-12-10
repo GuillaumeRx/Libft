@@ -57,12 +57,12 @@ ___
 
 ### Additional functions
 
-> Some usefull functions coded to increase workflow. Some are used in Libc's functions I've made.
+> Some usefull functions coded to increase workflow. Some are used in Libc's functions I've made
 
 
 ### Bonus functions
 
-> Functions made to handle chained-lists. Works only with the libft's generic chained-list.
+> Functions made to handle chained-lists. Works only with the libft's generic chained-list
 
 ```c
 // Libft list structure
@@ -74,3 +74,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 ```
+
+### Personal functions
+
+> Functions I've made that I found usefull
